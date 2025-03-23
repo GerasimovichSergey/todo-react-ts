@@ -1,9 +1,9 @@
-import { ToDoListItem } from "./ToDoListItem/ToDoListItem";
+import { ToDoListItem } from './ToDoListItem/ToDoListItem';
 import './ToDoList.scss';
-import { ToDo } from "../../models/todo-item";
+import { ToDo } from '../../models/todo-item';
 
 
-export const ToDoList = (props: { todos: ToDo[] }) => {
+export const ToDoList = (props: { todos: ToDo[], updateTodo: Function, deleteTodo: Function }) => {
     const unCheckedList = () => {
         return props.todos
             .filter((item) => {
@@ -11,7 +11,10 @@ export const ToDoList = (props: { todos: ToDo[] }) => {
             })
             .map((item, index) => {
                 return (
-                    <ToDoListItem toDoItem={item} key={index} />
+                    <ToDoListItem toDoItem={item} key={index}
+                                  updateTodo={props.updateTodo}
+                                  deleteTodo={props.deleteTodo}
+                    />
                 );
             });
     };
@@ -23,7 +26,10 @@ export const ToDoList = (props: { todos: ToDo[] }) => {
             })
             .map((item, index) => {
                 return (
-                    <ToDoListItem toDoItem={item} key={index} />
+                    <ToDoListItem toDoItem={item} key={index}
+                                  updateTodo={props.updateTodo}
+                                  deleteTodo={props.deleteTodo}
+                    />
                 );
             });
     };
