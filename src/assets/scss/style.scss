@@ -1,3 +1,7 @@
+:root {
+    --toastify-toast-width: 435px;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -9,4 +13,8 @@ body {
     font-size: 16px;
     line-height: 1.429;
     color: black;
+}
+
+.Toastify__toast {
+    justify-content: center;
 }
