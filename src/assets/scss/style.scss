@@ -18,3 +18,10 @@ body {
 .Toastify__toast {
     justify-content: center;
 }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
