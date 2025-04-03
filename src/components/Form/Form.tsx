@@ -1,11 +1,12 @@
 import styles from './Form.module.scss';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 
 export const Form = (props: { createNewTodo: Function }) => {
     const [taskText, setTaskText] = useState<string>('');
 
-    const formSubmit = () => {
+    const formSubmit = (event: React.SyntheticEvent) => {
+        event.preventDefault();
         if (taskText) {
             props.createNewTodo(taskText);
             setTaskText('');

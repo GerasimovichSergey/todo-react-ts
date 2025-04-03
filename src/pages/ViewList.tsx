@@ -6,7 +6,7 @@ interface ComponentProps {
     todos: ToDo[],
 }
 
-export const HomePage = (props: ComponentProps) => {
+export const ViewList = (props: ComponentProps) => {
     return (
         <div className="container">
             {props.todos.map((todo: ToDo, index: number) => {

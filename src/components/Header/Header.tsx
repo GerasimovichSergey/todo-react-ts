@@ -11,7 +11,7 @@ export const Header = () => {
         <header className={styles.header}>
             <div className={styles.container}>
                 <NavLink className={getActiveClass} to="/">Home</NavLink>
-                <NavLink className={getActiveClass} to="/todo">ToDo</NavLink>
+                <NavLink className={getActiveClass} to="/list">ToDo</NavLink>
             </div>
         </header>
     );
