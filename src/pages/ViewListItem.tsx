@@ -1,19 +1,18 @@
 import { ToDo } from '../models/todo-item';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { RootState } from '../store';
 
 
-interface ComponentProps {
-    todos: ToDo[],
-}
-
-export const ViewListItem = (props: ComponentProps) => {
+export const ViewListItem = () => {
+    const todoList = useSelector((state: RootState) => state.todoList.todos);
     const { id } = useParams();
     const navigate = useNavigate();
     const [todo, setTodo] = useState<ToDo>();
 
     useEffect(() => {
-        const searchTodo = props.todos.find((todo) => {
+        const searchTodo = todoList.find((todo) => {
             return todo.id === Number(id);
         });
 
@@ -22,7 +21,7 @@ export const ViewListItem = (props: ComponentProps) => {
         } else {
             navigate('/404');
         }
-    }, [props.todos, id, navigate]);
+    }, [todoList, id, navigate]);
 
     return (
         <div className="container">

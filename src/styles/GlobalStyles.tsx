@@ -1,27 +1,34 @@
-:root {
+import { createGlobalStyle } from 'styled-components';
+import normalize from 'styled-normalize';
+
+
+export const GlobalStyles = createGlobalStyle`
+  ${normalize}
+  :root {
     --toastify-toast-width: 435px;
-}
+  }
 
-* {
+  * {
     box-sizing: border-box;
-}
+  }
 
-body {
+  body {
     background-color: #edf0f1;
     padding: 50px 0 0 0;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     line-height: 1.429;
     color: black;
-}
+  }
 
-.Toastify__toast {
+  .Toastify__toast {
     justify-content: center;
-}
+  }
 
-.container {
+  .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
-}
+  }
+`;
