@@ -14,6 +14,7 @@ export const HeaderBlock = styled.header`
 `;
 
 export const HeaderContainer = styled.div`
+  position: relative;
   max-width: 97%;
   width: 100%;
   margin: 0 auto;
@@ -30,4 +31,15 @@ export const HeaderLink = styled(NavLink)`
   &.active {
     color: #ffffff33;
   }
+`;
+
+export const ToggleBtnContainer = styled.div`
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+`;
+
+export const ToggleButton = styled.button`
+  cursor: pointer;
 `;

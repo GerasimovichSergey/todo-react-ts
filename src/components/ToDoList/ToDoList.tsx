@@ -9,9 +9,9 @@ export const ToDoList = (props: { todos: ToDo[], updateTodo: Function, deleteTod
             .filter((item) => {
                 return !item.isDone;
             })
-            .map((item, index) => {
+            .map((item) => {
                 return (
-                    <ToDoListItem toDoItem={item} key={index}
+                    <ToDoListItem toDoItem={item} key={item.id}
                                   updateTodo={props.updateTodo}
                                   deleteTodo={props.deleteTodo}
                     />
@@ -24,9 +24,9 @@ export const ToDoList = (props: { todos: ToDo[], updateTodo: Function, deleteTod
             .filter((item) => {
                 return item.isDone;
             })
-            .map((item, index) => {
+            .map((item) => {
                 return (
-                    <ToDoListItem toDoItem={item} key={index}
+                    <ToDoListItem toDoItem={item} key={item.id}
                                   updateTodo={props.updateTodo}
                                   deleteTodo={props.deleteTodo}
                     />
