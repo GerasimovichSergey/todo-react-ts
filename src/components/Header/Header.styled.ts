@@ -40,6 +40,12 @@ export const ToggleBtnContainer = styled.div`
   transform: translateY(-50%);
 `;
 
-export const ToggleButton = styled.button`
+export const ToggleButton = styled.button<{ themeIcon: string }>`
   cursor: pointer;
+  width: 50px;
+  height: 30px;
+  background-image:url(${props => props.themeIcon});
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 15px 15px;
 `;
